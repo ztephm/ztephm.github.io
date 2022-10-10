@@ -7,7 +7,7 @@ datadogRum.init({
     service:'easy-rum-starter-guide-npm',
     env:'staging-1',
     // Specify a version number to identify the deployed version of your application in Datadog 
-    // version: '1.0.0',
+    version: '1.0.0',
     sampleRate: 100,
     sessionReplaySampleRate: 20,
     trackInteractions: true,
