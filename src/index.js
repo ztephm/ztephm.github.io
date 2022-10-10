@@ -14,6 +14,6 @@ datadogRum.init({
     trackResources: true,
     trackLongTasks: true,
     defaultPrivacyLevel:'mask-user-input'
-});
+}).then(console.log('rum init test'));
     
 datadogRum.startSessionReplayRecording();
