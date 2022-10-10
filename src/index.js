@@ -1,8 +1,8 @@
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
-    applicationId: '3fe58f5f-cd8a-484a-83cb-2b3097068fe5',
-    clientToken: 'pub62acb5033b1befb9983ddfbcf5eba337',
+    applicationId: 'ea889122-e180-426d-9be1-086a8bc22008',
+    clientToken: 'pub2e42182bf5a270da1f34684d13f32979',
     site: 'datadoghq.com',
     service:'easy-rum-starter-guide-npm',
     env:'staging-1',
