@@ -19,6 +19,13 @@
       .btnIndoorFurniture { background-color: lightcoral; }
       .btnOutdoorFurniture { background-color: lightskyblue; }
     </style>
+  </head>
+  <body>
+    <h1 >You did it!</h1>
+    <a href="https://app.datadoghq.com/rum/list">https://app.datadoghq.com/rum/list</a>
+    <p>
+      <a class="btn btnFurniture" href="/furniture/all-furniture.html" role="button" data-dd-action-name="click-furniture">Furniture</a>
+    </p>
     <script
         src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
         type="text/javascript">
@@ -43,12 +50,5 @@
         window.DD_RUM &&
         window.DD_RUM.startSessionReplayRecording();
     </script>
-  </head>
-  <body>
-    <h1 >You did it!</h1>
-    <a href="https://app.datadoghq.com/rum/list">https://app.datadoghq.com/rum/list</a>
-    <p>
-      <a class="btn btnFurniture" href="/furniture/all-furniture.html" role="button" data-dd-action-name="click-furniture">Furniture</a>
-    </p>
   </body>
 </html>
