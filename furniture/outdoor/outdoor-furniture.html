@@ -15,9 +15,9 @@
           border-radius: 12px;
         }
         .btnHome { background-color: mediumseagreen; }
-        .btnSub1 { background-color: goldenrod; }
-        .btnSub2 { background-color: lightcoral; }
-        .btnSub3 { background-color: lightskyblue; }
+        .btnFurniture { background-color: goldenrod; }
+        .btnIndoorFurniture { background-color: lightcoral; }
+        .btnOutdoorFurniture { background-color: lightskyblue; }
     </style>
     <script
         src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
@@ -45,10 +45,13 @@
     </script>
   </head>
   <body>
-    <h1>Subpage 3</h1>
+    <h1>Outdoor Furniture</h1>
     <a href="https://app.datadoghq.com/rum/list">https://app.datadoghq.com/rum/list</a>
     <p>
-        <a class="btn btnHome" href="./index.html" role="button" data-dd-action-name="clickhome">Home</a>
+      <a class="btn btnHome" href="/index.html" role="button" data-dd-action-name="click-home">Home</a>
+    </p>
+    <p>
+      <a class="btn btnIndoorFurniture" href="/furniture/indoor/indoor-furniture.html" role="button" data-dd-action-name="click-indoor-furniture">Indoor Furniture</a>
     </p>
   </body>
 </html>
