@@ -31,15 +31,15 @@
     </style>
   </head>
   <body>
-    <h1 >You did it!</h1>
+    <h1>RUM Test App</h1>
     <a href="https://app.datadoghq.com/rum/list">https://app.datadoghq.com/rum/list</a>
     <p>
       <a class="btn btnFurniture" href="/furniture/all-furniture.html" role="button" data-dd-action-name="click-furniture">Furniture</a>
     </p>
-    <p>
+    <!-- <p>
       <a id="btnCkList" class="btn btnCookie" href="#" role="button" data-dd-action-name="list-cookies">List Cookies</a>
       <a id="btnCkClear" class="btn btnCookie" href="#" role="button" data-dd-action-name="clear-cookies">Clear Cookies</a>
-    </p>
+    </p> -->
     <p id="cookieList"></p>
     <script
         src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
@@ -67,30 +67,46 @@
         window.DD_RUM.startSessionReplayRecording();
     </script>
     <script>
-      // Cookie handling
+      // Display cookies on page load
       function listCookies(){
          document.getElementById("cookieList").innerHTML = document.cookie;
       }
-      function deleteCookies() {
-            var allCookies = document.cookie.split(';');
-           
-            console.log("cookies to clear:" + allCookies);
 
-            for(var i = 0; i < allCookies.length; i++) {
-              document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
-              console.log("resetting date for allCookies[i]" + allCookies[i]);
-            }
+      window.onload = function() {
+        listCookies();
+      }
+      // Cookie handling
+      // function listCookies(){
+      //    document.getElementById("cookieList").innerHTML = document.cookie;
+      // }
+      // function deleteCookies() {
+      //       var allCookies = document.cookie.split(';');
+      //       console.log("cookies to clear: " + allCookies);
+  
+      //       for(var i = 0; i < allCookies.length; i++) {
+      //         document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+      //         console.log("resetting date for allCookies[i]" + allCookies[i]);
+      //       }
             
-            console.log("cookie check");
-            document.getElementById("cookieList").innerHTML = document.cookie;
-         }
-
+      //       document.getElementById("cookieList").innerHTML = document.cookie;
+      //    }
+    </script>
+    <!-- <script>
+      // Button Listeners
+      // Color Buttons
+      document.getElementById("beige").addEventListener("click", function() {
+        document.getElementById("colorbox").style.backgroundColor="burlywood";
+      });
+      document.getElementById("brown").addEventListener("click", function() {
+        document.getElementById("colorbox").style.backgroundColor="sienna";
+      });
+      // Cookie Buttons
       document.getElementById("btnCkList").addEventListener("click", function() {
         listCookies();
       });
       document.getElementById("btnCkClear").addEventListener("click", function() {
         deleteCookies();
       });
-   </script>
+    </script> -->
   </body>
 </html>
