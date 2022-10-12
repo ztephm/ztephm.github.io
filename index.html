@@ -65,14 +65,14 @@
     </script>
     <script>
       // Cookie handling
+      function listCookies(){
+         var currCookies = document.cookie;
+         document.getElementById("cookieList").innerHTML = currCookies;
+      }
+
       document.getElementById("btnCkList").addEventListener("click", function() {
         listCookies();
       });
-
-      function listCookies(){
-         var currCookies = document.cookie;
-         document.getElementById("list").innerHTML = currCookies;
-      }
    </script>
   </body>
 </html>
