@@ -36,10 +36,6 @@
     <p>
       <a class="btn btnFurniture" href="/furniture/all-furniture.html" role="button" data-dd-action-name="click-furniture">Furniture</a>
     </p>
-    <!-- <p>
-      <a id="btnCkList" class="btn btnCookie" href="#" role="button" data-dd-action-name="list-cookies">List Cookies</a>
-      <a id="btnCkClear" class="btn btnCookie" href="#" role="button" data-dd-action-name="clear-cookies">Clear Cookies</a>
-    </p> -->
     <h3>Cookies</h3>
     <p id="cookieList"></p>
     <script
@@ -68,46 +64,15 @@
         window.DD_RUM.startSessionReplayRecording();
     </script>
     <script>
-      // Display cookies on page load
+      // Cookie handling
       function listCookies(){
          document.getElementById("cookieList").innerHTML = document.cookie;
       }
 
+      // Display cookies on page load
       window.onload = function() {
         listCookies();
       }
-      // Cookie handling
-      // function listCookies(){
-      //    document.getElementById("cookieList").innerHTML = document.cookie;
-      // }
-      // function deleteCookies() {
-      //       var allCookies = document.cookie.split(';');
-      //       console.log("cookies to clear: " + allCookies);
-  
-      //       for(var i = 0; i < allCookies.length; i++) {
-      //         document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
-      //         console.log("resetting date for allCookies[i]" + allCookies[i]);
-      //       }
-            
-      //       document.getElementById("cookieList").innerHTML = document.cookie;
-      //    }
     </script>
-    <!-- <script>
-      // Button Listeners
-      // Color Buttons
-      document.getElementById("beige").addEventListener("click", function() {
-        document.getElementById("colorbox").style.backgroundColor="burlywood";
-      });
-      document.getElementById("brown").addEventListener("click", function() {
-        document.getElementById("colorbox").style.backgroundColor="sienna";
-      });
-      // Cookie Buttons
-      document.getElementById("btnCkList").addEventListener("click", function() {
-        listCookies();
-      });
-      document.getElementById("btnCkClear").addEventListener("click", function() {
-        deleteCookies();
-      });
-    </script> -->
   </body>
 </html>
