@@ -69,17 +69,20 @@
     <script>
       // Cookie handling
       function listCookies(){
-         var currCookies = document.cookie;
-         document.getElementById("cookieList").innerHTML = currCookies;
+         document.getElementById("cookieList").innerHTML = document.cookie;
       }
       function deleteCookies() {
-            var res = document.cookie;
-            var multiple = res.split(";");
-            for(var i = 0; i < multiple.length; i++) {
-               var key = multiple[i].split("=");
-               document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+            var allCookies = document.cookie.split(';');
+           
+            console.log("cookies to clear:" + allCookies);
+
+            for(var i = 0; i < allCookies.length; i++) {
+              document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+              console.log("resetting date for allCookies[i]" + allCookies[i]);
             }
+            
             console.log("cookie check");
+            document.getElementById("cookieList").innerHTML = document.cookie;
          }
 
       document.getElementById("btnCkList").addEventListener("click", function() {
