@@ -2,14 +2,6 @@
 <html>
   <head>
     <style>
-        #colorbox {
-          width:100px;
-          height:100px;
-          margin:10px;
-          padding:10px;
-          border-radius: 12px;
-          background-color: #777;
-        }
         .btn {
           border: none;
           color: white;
@@ -26,6 +18,16 @@
         .btnFurniture { background-color: goldenrod; }
         .btnIndoorFurniture { background-color: lightcoral; }
         .btnOutdoorFurniture { background-color: lightskyblue; }
+        .btnCookie { 
+          font-size: 13px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: #806666;
+          margin-top: 50px;
+          padding: 10px;
+          border-radius: 9px;
+        }
+        #btnCkList { background-color: peachpuff; }
+        #btnCkClear { background-color: pink; }
     </style>
   </head>
   <body>
@@ -48,6 +50,11 @@
     <p>
       <div id="colorbox"></div>
     </p>
+    <p>
+      <a id="btnCkList" class="btn btnCookie" href="#" role="button" data-dd-action-name="list-cookies">List Cookies</a>
+      <a id="btnCkClear" class="btn btnCookie" href="#" role="button" data-dd-action-name="clear-cookies">Clear Cookies</a>
+    </p>
+    <p id="cookieList"></p>
     <script
         src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
         type="text/javascript">
