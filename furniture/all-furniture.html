@@ -73,34 +73,11 @@
       function listCookies(){
          document.getElementById("cookieList").innerHTML = document.cookie;
       }
-      function deleteCookies() {
-            var allCookies = document.cookie.split(';');
-            console.log("cookies to clear: " + allCookies);
-  
-            for(var i = 0; i < allCookies.length; i++) {
-              document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
-              console.log("resetting date for allCookies[i]" + allCookies[i]);
-            }
-            
-            document.getElementById("cookieList").innerHTML = document.cookie;
-         }
-    </script>
-    <script>
-      // Button Listeners
-      // Color Buttons
-      document.getElementById("beige").addEventListener("click", function() {
-        document.getElementById("colorbox").style.backgroundColor="burlywood";
-      });
-      document.getElementById("brown").addEventListener("click", function() {
-        document.getElementById("colorbox").style.backgroundColor="sienna";
-      });
-      // Cookie Buttons
-      document.getElementById("btnCkList").addEventListener("click", function() {
+
+      // Display cookies on page load
+      window.onload = function() {
         listCookies();
-      });
-      document.getElementById("btnCkClear").addEventListener("click", function() {
-        deleteCookies();
-      });
+      }
     </script>
   </body>
 </html>
