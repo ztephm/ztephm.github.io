@@ -65,18 +65,13 @@
         window.DD_RUM &&
         window.DD_RUM.startSessionReplayRecording();
     </script>
-    <script>
+     <script>
       // Cookie handling
-      function listCookies(){
-        //  document.getElementById("cookieList").innerHTML = document.cookie;
+      // Display cookies on page load
+      window.onload = function() {
         document.getElementById("cookieList").innerHTML = 
          `<p>Cookies collected: </p>
          <p>${document.cookie}</p>`;
-      }
-
-      // Display cookies on page load
-      window.onload = function() {
-        listCookies();
       }
     </script>
   </body>
