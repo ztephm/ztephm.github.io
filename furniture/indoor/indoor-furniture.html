@@ -118,15 +118,17 @@
 
     function deleteCookies() {
         var allCookies = document.cookie.split(';');
-        console.log(allCookies);
-        // newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
+        // console.log(allCookies);
+        newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
-        // for(var i = 0; i < allCookies.length; i++) {
-        //   document.cookie = allCookies[i] + "=;expires=" + newDate;
-        //   console.log("resetting date for these cookies: " + allCookies[i]);
-        // }
+        for(var i = 0; i < allCookies.length; i++) {
+          document.cookie = allCookies[i] + "=;expires=" + newDate;
+          console.log("resetting date for these cookies: " + allCookies[i]);
+        }
+
+        console.log(`what expiration date does this cookie have? ${document.cookie}`);
         
-        // // Check cookies
+        // Check cookies
         // document.getElementById("cookieList").innerHTML = `Check for new cookies: ${document.cookie}`;
       }
 
