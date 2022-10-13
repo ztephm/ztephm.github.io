@@ -109,27 +109,19 @@
     </script>
    <script>
     // Cookie handling
-    // Clear cookies by setting expiration date in past
-    // function getNewCookies() {
-    //   document.getElementById("cookieList").innerHTML = 
-    //     `<p>Cookies collected after reset: </p>
-    //     <p>${document.cookie}</p>`;
-    // }
-
     function deleteCookies() {
         var allCookies = document.cookie.split(';');
-        // console.log(allCookies);
-        newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
+        var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
         for(var i = 0; i < allCookies.length; i++) {
           document.cookie = allCookies[i] + "=;expires=" + newDate;
           console.log("resetting date for these cookies: " + allCookies[i]);
         }
 
-        console.log(`what expiration date does this cookie have? ${document.cookie}`);
-        
-        // Check cookies
-        // document.getElementById("cookieList").innerHTML = `Check for new cookies: ${document.cookie}`;
+        var newCookies = document.cookie.split(';');
+        for(var i = 0; i < newCookies.length; i++) {
+          console.log("this should have new exp date: " + newCookies[i]);
+        }
       }
 
     // Display cookies on page load
