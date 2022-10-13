@@ -109,46 +109,19 @@
     </script>
    <script>
     // Cookie handling
-    function deleteCookies() {
-      // function get_cookie(name){
-      //     return document.cookie.split(';').some(c => {
-      //         return c.trim().startsWith(name + '=');
-      //     });
-      // }
+    const getCookieValue = (name) => (
+      document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+    )
 
-      // console.log(get_cookie('_dd_s'));
+    var test = getCookieValue('_dd_s');
+    console.log(test);
 
-        var allCookies = document.cookie.split(';');
+    // function deleteCookies() {
+    //     var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
-        // console.log(`document.cookie = ${document.cookie}`)
-        var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
-
-        for(var i = 0; i < allCookies.length; i++) {
-          console.log(`newDate = ${newDate}`);
-          console.log(`allCookies[`${i}`] = ${allCookies[i]}`);
-          // document.cookie = allCookies[i] + "=;expires=" + newDate;
-          // console.log(`do these have new date? ${document.cookie}`);
-        }
-
-        // var newCookies = document.cookie.split(';');
-        // for(var i = 0; i < newCookies.length; i++) {
-        //   console.log("this should have new exp date: " + newCookies[i]);
-        // }
-
-
-        // var allCookies = document.cookie.split(';');
-        // var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
-
-        // for(var i = 0; i < allCookies.length; i++) {
-        //   document.cookie = allCookies[i] + "=;expires=" + newDate;
-        //   console.log("resetting date for these cookies: " + allCookies[i]);
-        // }
-
-        // var newCookies = document.cookie.split(';');
-        // for(var i = 0; i < newCookies.length; i++) {
-        //   console.log("this should have new exp date: " + newCookies[i]);
-        // }
-      }
+    //     // Set expiration date for Datadog cookie by name
+    //     document.cookie = 'name=_dd_s;expires='+newDate+';path=/';
+    //   }
 
     // Display cookies on page load
     window.onload = function() {
