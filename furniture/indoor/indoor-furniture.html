@@ -115,15 +115,12 @@
       document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
     )
 
-    // var test = getCookieValue('_dd_s');
-    // console.log(test);
-
-
     function deleteCookies() {
         var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
         // Set expiration date for Datadog cookie by name
-        document.cookie = `name='_dd_s';expires=${newDate};path=/`;
+        // Set max-age=0 to delete cookie immediately
+        document.cookie = `name='_dd_s';expires=${newDate};max-age=0;path=/`;
 
         // Did it work?
         console.log(getCookieValue('_dd_s'));
