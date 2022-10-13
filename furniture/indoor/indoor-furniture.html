@@ -110,18 +110,39 @@
    <script>
     // Cookie handling
     function deleteCookies() {
-        var allCookies = document.cookie.split(';');
-        var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
+      function get_cookie(name){
+          return document.cookie.split(';').some(c => {
+              return c.trim().startsWith(name + '=');
+          });
+      }
 
-        for(var i = 0; i < allCookies.length; i++) {
-          document.cookie = allCookies[i] + "=;expires=" + newDate;
-          console.log("resetting date for these cookies: " + allCookies[i]);
-        }
+      console.log(get_cookie('_dd_s'));
+        // var allCookies = document.cookie.split(';');
+        // var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
-        var newCookies = document.cookie.split(';');
-        for(var i = 0; i < newCookies.length; i++) {
-          console.log("this should have new exp date: " + newCookies[i]);
-        }
+        // for(var i = 0; i < allCookies.length; i++) {
+        //   document.cookie = allCookies[i] + "=;expires=" + newDate;
+        //   console.log("resetting date for these cookies: " + allCookies[i]);
+        // }
+
+        // var newCookies = document.cookie.split(';');
+        // for(var i = 0; i < newCookies.length; i++) {
+        //   console.log("this should have new exp date: " + newCookies[i]);
+        // }
+
+
+        // var allCookies = document.cookie.split(';');
+        // var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
+
+        // for(var i = 0; i < allCookies.length; i++) {
+        //   document.cookie = allCookies[i] + "=;expires=" + newDate;
+        //   console.log("resetting date for these cookies: " + allCookies[i]);
+        // }
+
+        // var newCookies = document.cookie.split(';');
+        // for(var i = 0; i < newCookies.length; i++) {
+        //   console.log("this should have new exp date: " + newCookies[i]);
+        // }
       }
 
     // Display cookies on page load
