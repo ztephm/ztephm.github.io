@@ -26,8 +26,26 @@
           padding: 10px;
           border-radius: 9px;
         }
-        #btnCkList { background-color: peachpuff; }
-        #btnCkClear { background-color: pink; }
+        #btnBeige { 
+          background-color: burlywood;
+          margin-right: 5px; 
+        }
+        #btnBrown { background-color: sienna; }
+        .caption { 
+          font-size: 10px; 
+          margin-bottom: 40px;
+        }
+        .cta { margin-top: 3%; }
+        #colorbox {
+          width: 200px;
+          height: 200px;
+        }
+        .swatch {
+          display:inline-block;
+          width: 30px;
+          height: 30px;
+          border-radius: 20px;
+        }
     </style>
   </head>
   <body>
@@ -39,16 +57,26 @@
     <p>
       <a class="btn btnOutdoorFurniture" href="https://ztephm.github.io/furniture/outdoor/outdoor-furniture.html" role="button" data-dd-action-name="click-outdoor-furniture">Outdoor Furniture</a>
     </p>
+    <p class="cta">Choose color:</p>
+    <a id="btnBeige" class="swatch" href="#" role="button" data-dd-action-name="beige-button"></a>
+    <a id="btnBrown" class="swatch" href="#" role="button" data-dd-action-name="brown-button"></a>
     <p>
-      Choose color:
-    <p>
-      <a class="txtBtn" id="beige"  href="#" role="button" data-dd-action-name="beige-button">Beige</a>
-    </p>
-    <p>
-      <a class="txtBtn" id="brown"  href="#" role="button" data-dd-action-name="brown-button">Brown</a>
-    </p>
-    <p>
-      <div id="colorbox"></div>
+      <div id="colorbox">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+          <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+          <g><g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
+            <path class="chairPath" d="M4559.1,4377.8c-1763.9-226-2886.3-1053.4-3156.3-2329c-34.5-157.1-80.4-540.1-80.4-662.7c0-40.2,9.6-42.1,302.6-49.8c262.4-7.7,317.9-15.3,442.4-59.4c289.2-101.5,505.6-296.9,645.4-576.5c118.7-241.3,141.7-369.7,141.7-796.8v-354.3l47.9,70.9c51.7,76.6,162.8,137.9,306.4,168.5c65.1,13.4,660.8,19.2,1848.2,15.3c1666.3-5.7,1756.3-7.7,1846.3-42.1c51.7-19.2,126.4-69,164.7-107.3l72.8-72.8l9.6,377.3c9.6,419.4,26.8,511.4,143.7,748.9c91.9,187.7,306.4,409.9,480.7,496.1c195.3,99.6,373.5,136,658.8,136h249l-11.5,206.8c-28.7,532.5-181.9,1005.5-455.8,1415.4c-141.7,212.6-501.8,563.1-735.5,718.2c-524.8,346.7-1095.5,551.6-1877,676.1C5336.7,4398.8,4810,4408.4,4559.1,4377.8z"/>
+            <path class="chairPath" d="M788,1003.1C336,882.5,35.3,426.6,111.9-23.5c61.3-363.9,316-641.6,683.7-743.1c109.2-30.7,116.8-38.3,168.5-134.1l51.7-99.6v-1162.5c0-693.3,7.7-1210.4,19.2-1285.2c42.1-264.3,216.4-501.8,453.9-614.8c185.8-88.1,335.2-113,720.1-113h339v2189.1c0,2120.2-1.9,2194.9-38.3,2338.5c-88.1,346.7-281.5,555.4-595.6,643.5c-124.5,34.5-193.4,38.3-582.2,36.4C1010.2,1031.8,862.7,1024.2,788,1003.1z"/>
+            <path class="chairPath" d="M8142.6,1012.7c-231.7-46-453.9-212.6-555.4-417.5c-136-266.2-124.5-74.7-132.1-2545.4l-5.7-2225.5h340.9c226,0,386.9,9.6,475,28.7c369.6,78.5,626.3,319.8,697.2,656.9c13.4,68.9,21.1,482.6,21.1,1264.1c0,1204.7,3.8,1252.6,82.3,1373.2c32.6,49.8,63.2,67,168.5,93.8c312.2,80.5,572.7,352.4,649.3,679.9c32.6,139.8,15.3,385-38.3,524.8c-90,235.6-314.1,455.8-555.4,540.1c-91.9,32.6-166.6,38.3-584.2,40.2C8443.3,1028,8188.5,1022.3,8142.6,1012.7z"/>
+            <path class="chairPath" d="M3270.2-536.8c-214.5-69-333.3-189.6-386.9-396.5c-23-86.2-28.7-245.1-28.7-756.5v-647.3h2145.1h2147l-5.7,697.1l-5.7,695.3l-67,132.2c-44.1,86.2-93.9,151.3-149.4,193.4c-162.8,124.5-109.2,120.7-1907.6,118.7C3477-500.4,3375.5-502.3,3270.2-536.8z"/>
+            <path class="chairPath" d="M2854.6-3103.2v-459.6h2145.1h2145.1v459.6v459.7H4999.6H2854.6V-3103.2z"/>
+          </g></g>
+        </svg>
+      </div>
+      <div class="caption">Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
     </p>
     <h3>Cookies</h3>
     <p id="cookieList"></p>
@@ -77,6 +105,21 @@
         window.DD_RUM.startSessionReplayRecording();
     </script>
    <script>
+    // Color buttons
+    document.getElementById("btnBeige").addEventListener("click", function() {
+        const chairs = document.getElementsByClassName("chairPath");
+        for (let i = 0; i < chairs.length; i++) {
+          chairs[i].style.fill="burlywood";
+        }
+      });
+    
+    document.getElementById("btnBrown").addEventListener("click", function() {
+        const chairs = document.getElementsByClassName("chairPath");
+        for (let i = 0; i < chairs.length; i++) {
+          chairs[i].style.fill="sienna";
+        }
+      });
+
     // Cookie handling
     // Display cookies on page load
     window.onload = function() {
