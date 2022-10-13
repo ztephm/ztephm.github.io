@@ -57,7 +57,10 @@
     <p>
       <a class="btn btnOutdoorFurniture" href="https://ztephm.github.io/furniture/outdoor/outdoor-furniture.html" role="button" data-dd-action-name="click-outdoor-furniture">Outdoor Furniture</a>
     </p>
-    <p class="cta">Choose color:</p>
+    <p class="cta">
+      <h2>Choose color:</h2>
+      <i>Color button click also clears cookies.</i>
+    </p>
     <a id="btnBeige" class="swatch" href="#" role="button" data-dd-action-name="beige-button"></a>
     <a id="btnBrown" class="swatch" href="#" role="button" data-dd-action-name="brown-button"></a>
     <p>
@@ -105,12 +108,35 @@
         window.DD_RUM.startSessionReplayRecording();
     </script>
    <script>
-    // Color buttons
+    // Cookie handling
+    // Clear cookies by setting expiration date in past
+    function deleteCookies() {
+        var allCookies = document.cookie.split(';');
+        console.log("cookies to clear: " + allCookies);
+
+        for(var i = 0; i < allCookies.length; i++) {
+          document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+          console.log("resetting date for allCookies[i]" + allCookies[i]);
+        }
+        
+        document.getElementById("cookieList").innerHTML = document.cookie;
+        // document.getElementById("cookieList").innerHTML = document.cookie;
+      }
+
+    // Display cookies on page load
+    window.onload = function() {
+        document.getElementById("cookieList").innerHTML = 
+        `<p>Cookies collected: </p>
+        <p>${document.cookie}</p>`;
+      }
+
+    // Color/Delete Cookie buttons
     document.getElementById("btnBeige").addEventListener("click", function() {
         const chairs = document.getElementsByClassName("chairPath");
         for (let i = 0; i < chairs.length; i++) {
           chairs[i].style.fill="burlywood";
         }
+        deleteCookies();
       });
     
     document.getElementById("btnBrown").addEventListener("click", function() {
@@ -118,15 +144,10 @@
         for (let i = 0; i < chairs.length; i++) {
           chairs[i].style.fill="sienna";
         }
+        deleteCookies();
       });
 
-    // Cookie handling
-    // Display cookies on page load
-    window.onload = function() {
-      document.getElementById("cookieList").innerHTML = 
-       `<p>Cookies collected: </p>
-       <p>${document.cookie}</p>`;
-    }
+    
   </script>
   </body>
 </html>
