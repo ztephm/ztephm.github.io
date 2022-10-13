@@ -119,12 +119,15 @@
       // console.log(get_cookie('_dd_s'));
 
         var allCookies = document.cookie.split(';');
+
+        // console.log(`document.cookie = ${document.cookie}`)
         var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
         for(var i = 0; i < allCookies.length; i++) {
           console.log(`newDate = ${newDate}`);
-          document.cookie = allCookies[i] + "=;expires=" + newDate;
-          console.log(`do these have new date? ${document.cookie}`);
+          console.log(`allCookies[`i`] = ${allCookies[i]}`);
+          // document.cookie = allCookies[i] + "=;expires=" + newDate;
+          // console.log(`do these have new date? ${document.cookie}`);
         }
 
         // var newCookies = document.cookie.split(';');
