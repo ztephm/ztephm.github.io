@@ -114,9 +114,12 @@
         var allCookies = document.cookie.split(';');
         console.log("cookies to clear: " + allCookies);
 
+        newDate = new Date(0).toUTCString();
+
         for(var i = 0; i < allCookies.length; i++) {
-          document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+          document.cookie = allCookies[i] + "=;expires=" + newDate;
           console.log("resetting date for allCookies[i]" + allCookies[i]);
+          console.log("newDate = " + newDate);
         }
         
         document.getElementById("cookieList").innerHTML = document.cookie;
