@@ -120,7 +120,8 @@
 
         // Set expiration date for Datadog cookie by name
         // Set max-age=0 to delete cookie immediately
-        document.cookie = `name='_dd_s';expires=${newDate};max-age=0;path=/`;
+        // document.cookie = `name='_dd_s';expires=${newDate};max-age=0;path=/`;
+        document.cookie = `name=_dd_s;expires=${newDate};max-age=0;path=/`;
 
         // Did it work?
         console.log(getCookieValue('_dd_s'));
