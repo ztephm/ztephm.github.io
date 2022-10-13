@@ -68,7 +68,10 @@
     <script>
       // Cookie handling
       function listCookies(){
-         document.getElementById("cookieList").innerHTML = document.cookie;
+        //  document.getElementById("cookieList").innerHTML = document.cookie;
+        document.getElementById("cookieList").innerHTML = 
+         `<p>Cookies collected: </p>
+         <p>${document.cookie}</p>`;
       }
 
       // Display cookies on page load

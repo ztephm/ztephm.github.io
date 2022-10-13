@@ -71,10 +71,10 @@
 
       // Display cookies on page load
       window.onload = function() {
-        // listCookies();
+        currCookies = listCookies();
         document.getElementById("cookieList").innerHTML = 
          `<p>Cookies collected: </p>
-         <p>${document.cookie}</p>`;
+         <p>${currCookies}</p>`;
       }
     </script>
   </body>
