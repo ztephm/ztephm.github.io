@@ -109,19 +109,25 @@
     </script>
    <script>
     // Cookie handling
+
+    // Check for the correct DD cookie by name
     const getCookieValue = (name) => (
       document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
     )
 
-    var test = getCookieValue('_dd_s');
-    console.log(test);
+    // var test = getCookieValue('_dd_s');
+    // console.log(test);
 
-    // function deleteCookies() {
-    //     var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
 
-    //     // Set expiration date for Datadog cookie by name
-    //     document.cookie = 'name=_dd_s;expires='+newDate+';path=/';
-    //   }
+    function deleteCookies() {
+        var newDate = new Date(0).toUTCString(); // Thu, 01 Jan 1970 00:00:00 GMT
+
+        // Set expiration date for Datadog cookie by name
+        document.cookie = `name='_dd_s';expires=${newDate};path=/`;
+
+        // Did it work?
+        getCookieValue('_dd_s');
+      }
 
     // Display cookies on page load
     window.onload = function() {
