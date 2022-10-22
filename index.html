@@ -31,6 +31,10 @@
           margin-right: 5px; 
         }
         #btnBrown { background-color: sienna; }
+        #btnRed { 
+          background-color: darkred;
+          margin-right: 5px; 
+        }
         .caption { 
           font-size: 10px; 
           margin-bottom: 40px;
@@ -59,6 +63,7 @@
     </p>
     <a id="btnBeige" class="swatch" href="#" role="button" data-dd-action-name="beige-button"></a>
     <a id="btnBrown" class="swatch" href="#" role="button" data-dd-action-name="brown-button"></a>
+    <a id="btnRed" class="swatch" href="#" role="button" data-dd-action-name="red-button"></a>
     <p>
       <div id="colorbox">
         <?xml version="1.0" encoding="utf-8"?>
@@ -91,7 +96,7 @@
           service: 'easy-rum-starter-guide-cdnsync',
           env: 'staging-1',
           // Specify a version number to identify the deployed version of your application in Datadog 
-          version: '1.0.0',
+          version: '1.0.1',
           sampleRate: 100,
           sessionReplaySampleRate: 20,
           trackInteractions: true,
@@ -139,6 +144,14 @@
         const chairs = document.getElementsByClassName("chairPath");
         for (let i = 0; i < chairs.length; i++) {
           chairs[i].style.fill="sienna";
+        }
+        deleteCookies('_dd_s');
+      });
+
+      document.getElementById("btnRed").addEventListener("click", function() {
+        const chairs = document.getElementsByClassName("chairPath");
+        for (let i = 0; i < chairs.length; i++) {
+          chairs[i].style.fill="darkred";
         }
         deleteCookies('_dd_s');
       });
