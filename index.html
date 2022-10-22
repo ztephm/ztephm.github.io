@@ -132,27 +132,35 @@
       }
 
     // Color/Delete Cookie buttons
+    // delay so activity following the click is detected
+    // https://docs.datadoghq.com/real_user_monitoring/browser/tracking_user_actions/
     document.getElementById("btnBeige").addEventListener("click", function() {
         const chairs = document.getElementsByClassName("chairPath");
-        for (let i = 0; i < chairs.length; i++) {
-          chairs[i].style.fill="burlywood";
-        }
+        setTimeout(function(){
+            for (let i = 0; i < chairs.length; i++) {
+              chairs[i].style.fill="burlywood";
+            }
+          }, 200);
         deleteCookies('_dd_s');
       });
     
     document.getElementById("btnBrown").addEventListener("click", function() {
         const chairs = document.getElementsByClassName("chairPath");
-        for (let i = 0; i < chairs.length; i++) {
-          chairs[i].style.fill="sienna";
-        }
+        setTimeout(function(){
+            for (let i = 0; i < chairs.length; i++) {
+              chairs[i].style.fill="sienna";
+            }
+          }, 200);
         deleteCookies('_dd_s');
       });
 
       document.getElementById("btnRed").addEventListener("click", function() {
         const chairs = document.getElementsByClassName("chairPath");
-        for (let i = 0; i < chairs.length; i++) {
-          chairs[i].style.fill="darkred";
-        }
+        setTimeout(function(){
+            for (let i = 0; i < chairs.length; i++) {
+              chairs[i].style.fill="darkred";
+            }
+          }, 200);
         deleteCookies('_dd_s');
       });
   </script>
